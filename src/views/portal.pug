@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/portal.css")
+        title Portal
+    body 
+        .container-lg
+            .jumbotron
+                h1.display-4 Portal
+                hr.my-3
+                p.lead.
+                    Aquí podrás ver las respuestas
+                    registradas por el formulario.
+            h2 Respuestas
+            if respuestas.length == 0
+                .alert.alert-secondary No hay respuestas aún...
+            else
+                if losquesi.length > 0
+                    h4 Sí asistirán:
+                    table.table.table-success
+                        tr
+                            th Nombre
+                            th ¿Cuantos irán?
+                        each res in losquesi
+                            tr
+                                td= res.nombre
+                                td= res.cantidad
+                        tr
+                            th= 'Total: ' + losquesi.length
+                            th= losquesi.reduce((a, b) => a + b.cantidad, 0)
+                else 
+                    .alert.alert-secondary No hay confirmaciones de asistencia aún...
+                if losqueno.length > 0
+                    h4 No asistirán
+                    table.table.table-secondary
+                        tr
+                            th Nombre
+                        each res in losqueno
+                            tr
+                                td= res.nombre
+                        tr
+                            th= 'Total:' + losqueno.length
+                else
+                    .alert.alert-secondary No hay confirmaciones de inasistencia aún...
+            .row 
+                .col
+                .col-md-3
+                    a#cerrar-sesion.btn.btn-danger.justify-self-right(href="/logout") Cerrar sesión

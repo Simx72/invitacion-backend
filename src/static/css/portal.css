@@ -1,0 +1,41 @@
+@import url("./global.css");
+
+.jumbotron {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.table {
+    box-shadow: -3px 3px 10px rgba(0,0,0,.4);
+    -webkit-box-shadow: -3px 3px 10px rgba(0,0,0,.4);
+    -moz-box-shadow: -3px 3px 10px rgba(0,0,0,.4);
+}
+
+.table > td {
+    box-sizing: margin-box;
+    transition-duration: 1000ms;
+}
+
+.table-success,
+.table-success th {
+    border: 3px solid var(--success);
+}
+
+.table-success td {
+    padding-left: 1rem;
+}
+
+.table-secondary,
+.table-secondary th {
+    border: 3px solid var(--secondary);
+}
+
+.table-secondary td {
+    background-color: #bbbbbb;
+    text-align: center;
+}
+
+td:hover {
+    background-color: #fcfcfc;
+    transition-duration: 300ms;
+}

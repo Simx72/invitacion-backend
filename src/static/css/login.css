@@ -1,0 +1,5 @@
+@import url("./global.css");
+
+form {
+    max-width: 500px;
+}
